@@ -1,0 +1,10 @@
+server:
+  port: 8082 # 服务端口
+# 服务注册信息
+spring:
+  application:
+    name: eurekaserver # eureka的服务名称
+eureka:
+  client:
+    service-url:  # eureka的地址信息
+      defaultZone: http://127.0.0.1:8082/eureka

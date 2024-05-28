@@ -1,6 +1,13 @@
 server:
   port: 8081
 spring:
+  application:
+    name: userservice # 服务名称
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 # nocos服务地址
+        cluster-name: BJ # 北京
   datasource:
     url: jdbc:mysql://localhost:3306/cloud-user?useSSL=false
     username: root
@@ -15,3 +22,8 @@ logging:
     cn.itcast: debug
   pattern:
     dateformat: MM-dd HH:mm:ss:SSS
+
+#eureka:
+#  client:
+#    service-url:  # eureka的地址信息
+#      defaultZone: http://127.0.0.1:8082/eureka

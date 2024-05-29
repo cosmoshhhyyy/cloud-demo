@@ -8,6 +8,7 @@ spring:
       server-addr: localhost:8848
       discovery:
         cluster-name: BJ
+#        namespace: 8c72b03a-e379-4290-b0c2-59a236922e25
   datasource:
     url: jdbc:mysql://localhost:3306/cloud-order?useSSL=false
     username: root

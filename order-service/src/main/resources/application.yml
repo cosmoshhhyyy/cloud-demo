@@ -32,3 +32,18 @@ logging:
 userservice: # 给某个微服务配置负载均衡规则，这里是userservice服务
   ribbon:
     NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule # 负载均衡规则
+
+#feign:
+#  client:
+#    config:
+#      default: # 用default就是针对全部服务，如果写服务名称，则是针对某个微服务的配置
+#        loggerLevel: FULL #  日志级别
+feign:
+  client:
+    config:
+      default: # default全局的配置
+        loggerLevel: BASIC # 日志级别
+  httpclient:
+    enabled: true # 开启feign使用HttpClient
+    max-connections: 100 # 最大的连接数
+    max-connections-per-route: 20 # 每个路径的最大连接数

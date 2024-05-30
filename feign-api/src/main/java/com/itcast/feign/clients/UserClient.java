@@ -1,11 +1,13 @@
-package cn.itcast.order.web;
+package com.itcast.feign.clients;
 
-import cn.itcast.order.pojo.User;
+import com.itcast.feign.pojo.User;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient("userservice") // 指定服务名称
+//@FeignClient(value = "userservice", configuration = DefaultFeignConfiguration.class) // 指定服务名称
+@FeignClient(value = "userservice") // 指定服务名称
 public interface UserClient {
 
     @GetMapping("/user/{id}")
